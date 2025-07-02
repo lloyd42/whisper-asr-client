@@ -27,7 +27,11 @@
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"]
-		}
+		},
+
+		/* Type Checking */
+		"types": ["vite/client", "vitest/globals"]
 	},
-	"include": ["src"]
+	"include": ["src"],
+	"exclude": ["node_modules", "dist"]
 }

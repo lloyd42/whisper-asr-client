@@ -6,8 +6,12 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc -b && vite build",
-		"lint": "eslint .",
-		"preview": "vite preview"
+		"test": "vitest",
+		"test:e2e": "playwright test",
+		"lint": "biome check .",
+		"lint:fix": "biome check . --write",
+		"preview": "vite preview",
+		"preinstall": "lefthook install"
 	},
 	"dependencies": {
 		"@tailwindcss/vite": "^4.1.11",
@@ -19,16 +23,26 @@
 		"@biomejs/biome": "~2.0.6",
 		"@commitlint/cli": "^19.8.1",
 		"@commitlint/config-conventional": "^19.8.1",
+		"@playwright/test": "^1.53.2",
+		"@testing-library/jest-dom": "^6.6.3",
+		"@testing-library/react": "^16.3.0",
 		"@types/node": "^24.0.10",
 		"@types/react": "^19.1.8",
 		"@types/react-dom": "^19.1.6",
 		"@vitejs/plugin-react": "^4.5.2",
 		"globals": "^16.2.0",
+		"jsdom": "^26.1.0",
 		"lefthook": "^1.11.14",
+		"playwright": "^1.53.2",
 		"typescript": "~5.8.3",
 		"typescript-eslint": "^8.34.1",
-		"vite": "^6.3.5"
+		"vite": "^6.3.5",
+		"vitest": "^3.2.4"
 	},
+	"engines": {
+		"node": ">=20"
+	},
+	"packageManager": "pnpm@10.12.3",
 	"commitlint": {
 		"extends": [
 			"@commitlint/config-conventional"
